@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ImageService } from './services/image.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-pokemon-search';
+  title = 'Image Search';
+ 
+  constructor(private imageService: ImageService) { }
+
+  pokemons: any[] = []
+  searchTerm = '';
+
+  onSubmit(): void {
+    /*this.imageService.getImages(this.searchTerm)
+      .subscribe((response: any) => {
+        console.log(response)
+      });*/
+    this.imageService.getSuperHero(this.searchTerm)
+      .subscribe((response: any[]) => {
+        console.log(response as [])
+        this.pokemons = response;
+      });
+  }
 }

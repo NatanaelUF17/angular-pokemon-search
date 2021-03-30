@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+mat-form-field {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.images {
+    column-count: 3;
+}
+
+button {
+    margin-left: 30%;
+    margin-right: 30%;
+}
