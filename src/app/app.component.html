@@ -1,16 +1,2 @@
-<h1>{{ title }}</h1>
-
-<form class="form" (ngSubmit)="onSubmit()"> 
-  <mat-form-field>
-    <mat-label>Search term</mat-label>
-    <input matInput [(ngModel)]="searchTerm" name="searchTerm">
-  </mat-form-field>
-
-  <button mat-flat-button color="primary" type="submit">Submit</button>
-</form>
-
-<section class="images"> 
-  <div *ngFor="let drink of pokemons; let index = index">
-    {{ drink }}
-  </div>
-</section>
+<app-header></app-header>
+<app-pokemon-list></app-pokemon-list>

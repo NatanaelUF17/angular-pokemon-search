@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from './services/image.service';
+import { PokemonService } from './services/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +7,7 @@ import { ImageService } from './services/image.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Image Search';
+  title = 'Pokemon Search';
  
-  constructor(private imageService: ImageService) { }
-
-  pokemons: any[] = []
-  searchTerm = '';
-
-  onSubmit(): void {
-    /*this.imageService.getImages(this.searchTerm)
-      .subscribe((response: any) => {
-        console.log(response)
-      });*/
-    this.imageService.getSuperHero(this.searchTerm)
-      .subscribe((response: any[]) => {
-        console.log(response as [])
-        this.pokemons = response;
-      });
-  }
+  constructor() { }
 }
